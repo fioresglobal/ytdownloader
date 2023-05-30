@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video İndir YouTube</title>
+  <link rel="shortcut icon" href="./images/Ico.png">
+  <link rel="stylesheet" href=".//style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+  <style>.link{
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: url("./images/yt.png") no-repeat left;
+    background-color: whitesmoke;
+    background-size: 30px;
+    padding: 12px 20px 12px 40px;
+}</style>
+</head>
+<body class="bg-light">
+  <div class="headerout" id="myHeader">
+    <div class="header">
+        <div class="header-image-div">
+            <img class ="header-image" src="./images/Logoo.jpeg">
+        </div>
+        <div class="header-buttons">
+            <div class="home"><form >
+                <button class="btn" href="/index.html">
+                    AnaSayfa</button>
+            </form></div>
+        </div>
+    </div>
+</div>
+  <div class="col-md-7 offset-md-3 mt-5">
+    <div class="card">
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="text-weight" style="color: whitesmoke;" ><b>Youtube Linki Girin :</b></label>
+              <input type="txt" name="link" class="form-control link" placeholder="https://www.youtube.com/" required>
+            </div>
+          </div>
+        </div>
+        <form class="form-download mt-3">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="text-weight" style="color: whitesmoke;"><b>Video Formati Seçin :</b></label>
+                <select class="form-control formte" required>
+                  <option selected disabled>Video Formati Seçin</option> 
+                  <option value="mp4a">144p Mp4</option>
+                  <option value="360">360p Mp4</option>
+                  <option value="480">480p Mp4</option>
+                  <option value="720">720p Mp4</option>
+                  <option value="1080">1080p Mp4</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group mt-4 download-video" >
+                <button class="btn btn-success btn-block click-btn-down" type="submit">Şimdi İndir</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</form>
+<div class="h-int">
+    <h3>YouTube'dan Video Nasıl İndirilir</h3>
+</div>
+<div class="sections">
+    <div class="s1" id="se">
+        <img src="./images/dicon.png" class="int-img">
+    <p>
+        İndirmek istediğiniz videonun bağlantısını kopyalayın </br> ya da Paylaş düğmesine basarak çıkan linki kopyalayın
+    </p> 
+    </div>
+    <div class="s2" id="se">
+        <img src="./images/paste.png" class="int-img">
+        <p>
+            Kopyaladığınız bağlantıyı yukarıda bulunan kutucuğa yapıştırın
+        </p>
+    </div>
+    <div class="s3" id="se">
+        <img src="./images/d.png" class="int-img">
+        <p>
+            Videoyu tanımladıktan sonra indirmek istedğiniz formatı seçin
+        </p>
+    </div>
+</div>
+<script src="/script.js"></script>
+
+<footer>
+    Copyright © Convores.cloud 
+</footer>
+</body>
+<script type="text/javascript">
+  $(".click-btn-down").click(function(){
+    var link = $(".link").val();
+    var formate = $(".formte").children("option:selected").val();
+    var src =""+link+"="+formate+"";
+    downloadVideo(link,formate);
+  });
+  function downloadVideo(link,formate) {
+      $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="https://loader.to/api/button/?url='+link+'&f='+formate+'"></iframe>');
+  }
+</script>
+</html>
