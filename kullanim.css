@@ -5,8 +5,8 @@ body {
 }
 .headerout {
     height: 90px;
-    margin-top: -11px;
-    margin-left: -7px;
+    margin-top: -19px;
+    margin-left: -15px;
     margin-right: -7px;
     background-color: white;
     box-shadow: 0 -6px 15px 5px rgba(0,0,0,0.5);  
@@ -21,7 +21,6 @@ body {
     margin-right: auto;
     text-align: left;
     display: flex;
-    column-gap: 20px;
     padding: 15px 16px 15px 16px;
     
 }
@@ -33,12 +32,11 @@ footer {
     border: none;
     color: black;
     background-color: white;
-    padding: 15px 32px;
+    padding: 15px 33px;
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    font-size: 1.35rem;
-    margin: 20px 2px;
+    margin: 15px 2px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
 }
