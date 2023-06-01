@@ -146,7 +146,7 @@ footer {
         text-decoration: none;
         display: inline-block;
         text-align: center;
-        margin:  2px;
+        margin: auto;
         cursor: pointer;
         font-family: 'Times New Roman', Times, serif;
     }
@@ -154,14 +154,10 @@ footer {
         display: flex;
         text-align: right;
     }
-    .card-body {
-        width: 100%;
-        margin-top: 20px;
-        background-color: #55286f;
-        height: 380px;
-        margin-left: 1px;
-    }
     .row{
         width: 100%;;
+    }
+    .hs{
+        margin-top: 90px;
     }
 }
