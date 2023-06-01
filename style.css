@@ -129,11 +129,11 @@ footer {
 
 @media only screen and (max-width: 600px){
     .header-image {
-        width: 100px;
-        height: 30px;
+        width: 150px;
+        height: 50px;
     }
     .headerout {
-        height: 50px;
+        height: 70px;
         margin-top: -11px;
         margin-left: -7px;
         margin-right: -7px;
