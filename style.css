@@ -150,6 +150,7 @@ footer {
         margin: auto;
         cursor: pointer;
         font-family: 'Times New Roman', Times, serif;
+        font-size: 0.5rem;
     }
     .header-buttons{
         display: flex;
