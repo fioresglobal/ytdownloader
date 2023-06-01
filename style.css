@@ -25,6 +25,10 @@ body {
     padding: 15px 16px 15px 16px;
     
 }
+footer {
+    text-align: center;
+    margin-top: 200px;
+}
 .btn {
     border: none;
     color: black;
@@ -41,10 +45,7 @@ body {
 .header-buttons{
     display: flex;
     text-align: right;
-}
-footer {
-    text-align: center;
-    margin-top: 200px;
+    column-gap: 40px;
 }
 .hs {
     text-align: center;
