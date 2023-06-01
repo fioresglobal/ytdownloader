@@ -45,7 +45,6 @@ footer {
 .header-buttons{
     display: flex;
     text-align: right;
-    column-gap: 40px;
 }
 .hs {
     text-align: center;
