@@ -21,6 +21,7 @@ body {
     margin-right: auto;
     text-align: left;
     display: flex;
+    column-gap: 20px;
     padding: 15px 16px 15px 16px;
     
 }
@@ -32,11 +33,12 @@ footer {
     border: none;
     color: black;
     background-color: white;
-    padding: 15px 33px;
+    padding: 15px 32px;
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    margin: 15px 2px;
+    font-size: 1.35rem;
+    margin: 20px 2px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -95,6 +97,7 @@ footer {
   color: rgba(0, 0, 0, 0.65);
   transform: translateY(0);
 }
+
 
 
 
