@@ -25,6 +25,23 @@ body {
     padding: 15px 16px 15px 16px;
     
 }
+.btn {
+    border: none;
+    color: black;
+    background-color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.35rem;
+    margin: 20px 2px;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+.header-buttons{
+    display: flex;
+    text-align: right;
+}
 footer {
     text-align: center;
     margin-top: 200px;
