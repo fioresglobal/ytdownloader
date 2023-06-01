@@ -157,4 +157,14 @@ footer {
     .hs{
         margin-top: 90px;
     }
+    .card-body {
+        margin-top: 20px;
+        background-color: #55286f;
+        height: 380px;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .link{
+        width: auto;
+    }
 }
