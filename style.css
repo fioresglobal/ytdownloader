@@ -154,9 +154,6 @@ footer {
         display: flex;
         text-align: right;
     }
-    .row{
-        width: 100%;;
-    }
     .hs{
         margin-top: 90px;
     }
