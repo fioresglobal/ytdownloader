@@ -33,12 +33,11 @@ footer {
     border: none;
     color: black;
     background-color: white;
-    padding: 15px 32px;
+    padding: 15px 13px;
     text-decoration: none;
     display: inline-block;
     text-align: center;
-    font-size: 1.35rem;
-    margin: 20px 2px;
+    margin: 15px 1.6px;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
 }
