@@ -27,7 +27,7 @@ body {
 }
 footer {
     text-align: center;
-    margin-top: 200px;
+    
 }
 .btn {
     border: none;
@@ -126,6 +126,28 @@ footer {
 .st{
     margin-top: 20px;
 }
+.exlink{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+.out{
+    text-align: center;
+    display: inline-block;
+
+}
+.last{
+    text-align: center;
+    margin-top: 200px;
+}
+.slink{
+    color: black;
+}
+.bl{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
 
 @media only screen and (max-width: 600px){
     .header-image {
@@ -148,13 +170,12 @@ footer {
         display: inline-block;
         text-align: center;
         margin: auto;
-        cursor: pointer;
         font-family: 'Times New Roman', Times, serif;
-        font-size: 0.5rem;
     }
     .header-buttons{
         display: flex;
         text-align: right;
+
     }
     .hs{
         margin-top: 90px;
