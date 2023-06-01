@@ -126,28 +126,7 @@ footer {
 .st{
     margin-top: 20px;
 }
-.exlink{
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-}
-.out{
-    text-align: center;
-    display: inline-block;
 
-}
-.last{
-    text-align: center;
-    margin-top: 200px;
-}
-.slink{
-    color: black;
-}
-.bl{
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-}
 
 @media only screen and (max-width: 600px){
     .header-image {
