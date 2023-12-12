@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Calculator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-draw"></script>
+    <script src="https://unpkg.com/leaflet-editable"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder"></script>
+    <style>
+        body {
+            background-color: #0c2340; /* Dark Blue */
+            color: #ffffff; /* White */
+            font-family: 'Arial', sans-serif;
+        }
+
+        #map {
+            height: 500px;
+            width: 800px;
+            text-align: center;
+            margin-left: 40%;
+            margin-top: 10%;
+            border: 2px solid #3498db; /* Blue */
+            border-radius: 10px;
+        }
+
+        #area-display {
+            position: absolute;
+            top: 40%;
+            left: 10px;
+            background-color: #2980b9; /* Dark Blue */
+            color: #ffffff; /* White */
+            padding: 10px;
+            border: 2px solid #3498db; /* Blue */
+            border-radius: 10px;
+        }
+
+        #search-bar {
+            position: absolute;
+            top: 100px;
+            right: 10px;
+            z-index: 1000;
+            color: #ffffff; /* White */
+        }
+
+        input[type="text"] {
+            background-color: #3498db; /* Blue */
+            color: #ffffff; /* White */
+            border: 2px solid #2980b9; /* Dark Blue */
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        button {
+            background-color: #3498db; /* Blue */
+            color: #ffffff; /* White */
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Dark Blue */
+        }
+        .coordinates {
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 35px;
+            color: whitesmoke;
+        }
+        .headerout {
+            height: 90px;
+            margin-top: -11px;
+            margin-left: -7px;
+            margin-right: -7px;
+            background-color: white;
+            box-shadow: 0 -6px 15px 5px rgba(0,0,0,0.5);  
+        }
+
+        .header-image {
+            width: 300px;
+            height: 70px;
+        }
+        .header {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+            display: flex;
+            column-gap: 20px;
+            padding: 15px 16px 15px 16px;
+            
+        }
+        footer {
+            text-align: center;
+            margin-top: 100px;
+            
+        }
+        .btn {
+            border: none;
+            color: black;
+            background-color: white;
+            padding: 1px 10px;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: 1rem;
+            margin: 20px 2px;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .header-buttons{
+            display: flex;
+            text-align: right;
+        }
+        .hs {
+            text-align: center;
+        }
+        .main-header {
+            
+            color: #d00000;
+            font-size: 50px;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .exp{
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10;
+            margin-top: 150px;
+
+        }
+        .exp2{
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10;
+            margin-top: 150px;
+
+        }
+
+@media only screen and (max-width: 600px){
+    .header-image {
+        width: 150px;
+        height: 50px;
+    }
+    .headerout {
+        height: 70px;
+        margin-top: -11px;
+        margin-left: -7px;
+        margin-right: -7px;
+        background-color: white;
+        box-shadow: 0 -6px 15px 5px rgba(0,0,0,0.5);  
+    }
+    .btn {
+        border: none;
+        color: black;
+        background-color: white;
+        text-decoration: none;
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .header-buttons{
+        display: flex;
+        text-align: right;
+
+    }
+    .hs{
+        margin-top: 90px;
+    }
+    .card-body {
+        margin-top: 20px;
+        background-color: #55286f;
+        height: 380px;
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .link{
+        width: auto;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <div class="headerout" id="myHeader">
+        <div class="header">
+            <div class="header-image-div">
+              <img class="header-image" title="Video indir youtube" src="./images/Logoo.jpeg" alt="Youtube mp4 indir Logo">
+            </div>
+            <div class="header-buttons">
+                <div class="home">
+                  <a class="btn" href="/">AnaSayfa</a>
+                </div>
+                <div class="proje"><form>
+                  <a class="btn" href="./kullanim.html">
+                    Kullanım Koşulları</a>
+              </form></div>
+              <div class="proje"><form>
+                <a class="btn" href="/Dice Game.html">
+                 Zar oyunu</a>
+            </form></div>
+            <div class="proje"><form>
+              <a class="btn" href="/area.html">
+               Area Calculator</a>
+          </form></div>
+            </div>
+        </div>
+    </div>
+    <h1> Map Area Calculator</h1>
+
+    <div class="coordinates">
+        Latitude: <input type="text" id="latitude">
+        Longitude: <input type="text" id="longitude">
+        <button onclick="moveToCoordinates()">Go to Coordinates</button>
+    </div>
+    <div id="search-bar"></div>
+
+    <div id="map"></div>
+
+    <div id="area-display">Area: <span id="area-value">0</span> square meters</div>
+    <p class="exp">Welcome to Map-Area Calculator, your go-to online tool for accurately measuring and calculating areas in square meters directly from maps. Whether you're a land surveyor, urban planner, real estate professional, or simply curious about the size of a specific area, our user-friendly platform makes it easy to obtain precise measurements by selecting points on a map.</p>
+    <p class="exp2">Intuitive Map Interface:
+        Our website provides an intuitive map interface that allows users to navigate and choose specific locations effortlessly. Users can zoom in and out, drag the map, and pinpoint locations with a simple click.
+        
+        Point Selection:
+        The core functionality of our Map-Area Calculator lies in the ability to select points on the map. Users can mark the corners or boundaries of the area they want to measure, creating a polygon directly on the map.
+        
+        Real-Time Calculation:
+        As you select points on the map, our advanced algorithm instantly calculates the enclosed area in square meters. The real-time calculation ensures that users can visualize the area size as they make adjustments to their point selections.
+        
+        Accuracy and Precision:
+        We prioritize accuracy and precision in our calculations, ensuring that the resulting area measurement is as reliable as possible. This makes our tool suitable for various professional applications, such as land development, construction planning, and environmental analysis.
+        
+        Unit Flexibility:
+        While the default unit is square meters, Map-Area Calculator allows users to convert their measurements into other units, such as square kilometers, square feet, or acres, to suit their specific needs.
+        
+        Save and Share Functionality:
+        Once you've obtained the desired area measurement, you can save your work and share it with colleagues or clients. This feature facilitates collaboration and documentation of measured areas.
+        
+        Responsive Design:
+        Map-Area Calculator is designed to be accessible on various devices, including desktops, laptops, tablets, and smartphones. The responsive design ensures a seamless user experience across different platforms.
+        
+        No Installation Required:
+        Forget about downloading and installing complex software. Map-Area Calculator operates entirely online, eliminating the need for any installations or updates.
+        
+        How to Use:
+        
+        Navigate to the Map-Area Calculator website.
+        Locate the desired area on the map.
+        Click on the map to mark the corners or boundaries of the area.
+        Watch as the tool instantly calculates the enclosed area in square meters.
+        Optionally, convert the measurement to other units and save or share your results.</p>
+    <footer>
+        <hr>
+        <p>Copyright 2023 © videoindiryoutube.com. Her hakkı saklıdır.</p>
+      </footer>
+    <script>
+        function moveToCoordinates() {
+            var latitude = parseFloat(document.getElementById('latitude').value);
+            var longitude = parseFloat(document.getElementById('longitude').value);
+
+            if (!isNaN(latitude) && !isNaN(longitude)) {
+                map.setView([latitude, longitude], 15);
+            } else {
+                alert("Please enter valid coordinates");
+            }
+        }
+        var map = L.map('map', {
+            center: [39.885976649743256, 32.85625616405141],
+            zoom: 30
+        });
+
+        // Remove the attribution control
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: '',
+            attributionControl: false
+        }).addTo(map);
+
+        map.editable = new L.Editable(map);
+
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                remove: true,
+                edit: false
+            },
+            draw: {
+                polygon: {
+                    allowIntersection: false,
+                    showArea: true,
+                    shapeOptions: {
+                        color: '#3498db' // Blue
+                    },
+                    drawError: {
+                        color: '#e74c3c', // Red
+                        timeout: 1000
+                    }
+                },
+                marker: false,
+                circle: false,
+                polyline: false,
+                rectangle: false
+            }
+        });
+        map.addControl(drawControl);
+
+        // Add address search bar outside the map
+        var searchControl = L.Control.geocoder().addTo(map);
+        document.getElementById('search-bar').appendChild(searchControl.getContainer());
+
+        document.getElementById('area-value').textContent = '0';
+        map.on('draw:created', function (e) {
+            var layer = e.layer;
+            drawnItems.clearLayers();
+            drawnItems.addLayer(layer);
+            updateAreaDisplay(layer);
+        });
+
+        function updateAreaDisplay(layer) {
+            if (layer instanceof L.Polygon) {
+                var area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
+                document.getElementById('area-value').textContent = area.toFixed(2);
+            }
+        }
+    </script>
+
+    <style>
+        .leaflet-editing-icon {
+            background-color: #3498db; /* Blue */
+            border-radius: 50%;
+            width: 1px;
+            height: 1px;
+        }
+    </style>
+
+</body>
+
+</html>
