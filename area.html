@@ -4,11 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Area Calculator</title>
-    <meta name="description" content="Discover the simplicity of precise area measurement with Map-Area Calculator. Effortlessly select points on the map to instantly calculate areas in square meters. Ideal for professionals in land surveying, urban planning, and real estate, our user-friendly tool offers real-time accuracy and easy unit conversion.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://videoindiryoutube.com">
-  <link rel="shortcut icon" href="/images/LLOOG.png">
+    <title>SOLGIS</title>
+    <link rel="shortcut icon" href="./SOLGIS.jpeg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-draw/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
@@ -16,43 +13,10 @@
     <script src="https://unpkg.com/leaflet-draw"></script>
     <script src="https://unpkg.com/leaflet-editable"></script>
     <script src="https://unpkg.com/leaflet-control-geocoder"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201427968">
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Area Calculator",
-            "description": "Discover the simplicity of precise area measurement with Map-Area Calculator. Effortlessly select points on the map to instantly calculate areas in square meters. Ideal for professionals in land surveying, urban planning, and real estate.",
-            "url": "https://videoindiryoutube.com/area.html",
-            "mainEntity": {
-                "@type": "SoftwareApplication",
-                "name": "Map-Area Calculator",
-                "description": "Online tool for measuring and calculating areas in square meters directly from maps.",
-                "applicationCategory": "Mapping",
-                "operatingSystem": "Web",
-                "url": "https://your-website.com/area.html"
-            }
-        }
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1324685825216909"
-     crossorigin="anonymous"></script>
-    <script>fetch('https://api.example.com/recipes/123')
-.then(response => response.text())
-.then(structuredDataText => {
-  const script = document.createElement('script');
-  script.setAttribute('type', 'application/ld+json');
-  script.textContent = structuredDataText;
-  document.head.appendChild(script);
-});</script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11201427968">
-  </script>
     <style>
         body {
-            background-color: #0c2340; /* Dark Blue */
-            color: #ffffff; /* White */
+            background-color: #0c2340; 
+            color: #ffffff; 
             font-family: 'Arial', sans-serif;
         }
 
@@ -62,7 +26,7 @@
             text-align: center;
             margin-left: 40%;
             margin-top: 10%;
-            border: 2px solid #3498db; /* Blue */
+            border: 2px solid #3498db; 
             border-radius: 10px;
         }
 
@@ -70,10 +34,10 @@
             position: absolute;
             top: 40%;
             left: 10px;
-            background-color: #2980b9; /* Dark Blue */
-            color: #ffffff; /* White */
+            background-color: #2980b9; 
+            color: #ffffff; 
             padding: 10px;
-            border: 2px solid #3498db; /* Blue */
+            border: 2px solid #3498db; 
             border-radius: 10px;
         }
 
@@ -82,20 +46,20 @@
             top: 100px;
             right: 10px;
             z-index: 1000;
-            color: #ffffff; /* White */
+            color: #ffffff; 
         }
 
         input[type="text"] {
-            background-color: #3498db; /* Blue */
-            color: #ffffff; /* White */
-            border: 2px solid #2980b9; /* Dark Blue */
+            background-color: #3498db; 
+            color: #ffffff; 
+            border: 2px solid #2980b9; 
             border-radius: 5px;
             padding: 5px;
         }
 
         button {
-            background-color: #3498db; /* Blue */
-            color: #ffffff; /* White */
+            background-color: #3498db; 
+            color: #ffffff; 
             border: none;
             padding: 5px 10px;
             border-radius: 5px;
@@ -103,7 +67,7 @@
         }
 
         button:hover {
-            background-color: #2980b9; /* Dark Blue */
+            background-color: #2980b9; 
         }
         .coordinates {
             margin-top: 50px;
@@ -182,6 +146,13 @@
             margin-top: 150px;
 
         }
+        .calculation-results{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        
 
 @media only screen and (max-width: 600px){
     .header-image {
@@ -224,6 +195,57 @@
     .link{
         width: auto;
     }
+    #map {
+        height: 300px;
+        width: 350px;
+        text-align: center;
+        margin-left: 0;
+        margin-top: 80%;
+        border: 2px solid #3498db; 
+        border-radius: 10px;
+        margin-bottom: 200px;
+    
+    }
+    #area-display {
+        position: absolute;
+        top: 57%;
+        left: 70px;
+        background-color: #2980b9; /* Dark Blue */
+        color: #ffffff; /* White */
+        padding: 10px;
+        border: 2px solid #3498db; /* Blue */
+        border-radius: 10px;
+        text-align: center;
+    }
+    #search-bar {
+        position: absolute;
+        top: 520px;
+        left: 20px;
+        color: #ffffff; /* White */
+    }
+    h1 {
+        text-align: center;
+        font-size: 35px;
+        color: whitesmoke;
+        margin-left: 0px;
+    }
+    input[type="text"] {
+        background-color: #3498db; /* Blue */
+        color: #ffffff; /* White */
+        border: 2px solid #2980b9; /* Dark Blue */
+        border-radius: 5px;
+        padding: 5px;
+        margin-left: 100px;
+        
+    }
+    #calculation-results{
+      position: absolute;
+      margin-top: 20%;
+      text-align: left;
+      margin-bottom: 200px;
+      margin-top: 0px;
+      font-size: 0.8rem;
+  }
 }
     </style>
 </head>
@@ -242,6 +264,10 @@
                   <a class="btn" href="./kullanim.html">
                     Kullanım Koşulları</a>
               </form></div>
+              <div class="proje"><form>
+                <a class="btn" href="/Dice Game.html">
+                 Zar oyunu</a>
+            </form></div>
             <div class="proje"><form>
               <a class="btn" href="/area.html">
                Area Calculator</a>
@@ -249,7 +275,7 @@
             </div>
         </div>
     </div>
-    <h1> Map Area Calculator</h1>
+    <h1> Solar Panel Efficency Calculator</h1>
 
     <div class="coordinates">
         Latitude: <input type="text" id="latitude">
@@ -260,7 +286,11 @@
 
     <div id="map"></div>
 
-    <div id="area-display">Area: <span id="area-value">0</span> square meters</div>
+    <div id="area-display">Area: <span id="area-value">0</span> square meters
+        <button onclick="calculatePanels()">Calculate</button></div>
+    
+    <div id="calculation-results"></div>
+    <h2>This site still under development...</h2>
     <p class="exp">Welcome to Map-Area Calculator, your go-to online tool for accurately measuring and calculating areas in square meters directly from maps. Whether you're a land surveyor, urban planner, real estate professional, or simply curious about the size of a specific area, our user-friendly platform makes it easy to obtain precise measurements by selecting points on a map.</p>
     <h2 class="exp2">How to Use</h2>
     <p class="exp2">Enter your home adress or cordinates of your house and find it in the map. Secondly select the polygon symbol from the right corner of the map. Pick the edges of your roof and click finish. It will give you the area of your houses rooftop in meter square.</p>
@@ -268,6 +298,8 @@
         <hr>
         <p>Copyright 2023 © videoindiryoutube.com. Her hakkı saklıdır.</p>
       </footer>
+
+
     <script>
         function moveToCoordinates() {
             var latitude = parseFloat(document.getElementById('latitude').value);
@@ -280,11 +312,10 @@
             }
         }
         var map = L.map('map', {
-            center: [39.86553298132517, 32.733805944169156],
+            center: [39.865696650316075, 32.73390183313413],
             zoom: 30
         });
 
-        // Remove the attribution control
         L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
             attribution: '',
             attributionControl: false
@@ -306,10 +337,10 @@
                     allowIntersection: false,
                     showArea: true,
                     shapeOptions: {
-                        color: '#3498db' // Blue
+                        color: 'red' 
                     },
                     drawError: {
-                        color: '#e74c3c', // Red
+                        color: '#e74c3c', 
                         timeout: 1000
                     }
                 },
@@ -321,7 +352,7 @@
         });
         map.addControl(drawControl);
 
-        // Add address search bar outside the map
+
         var searchControl = L.Control.geocoder().addTo(map);
         document.getElementById('search-bar').appendChild(searchControl.getContainer());
 
@@ -339,11 +370,41 @@
                 document.getElementById('area-value').textContent = area.toFixed(2);
             }
         }
+        function calculatePanels() {
+            var area = parseFloat(document.getElementById('area-value').textContent);
+            var resultDiv = document.getElementById('calculation-results');
+            
+            if (!isNaN(area)) {
+                var panelDimensions = [
+                    { watts: 400, width: 200, height: 100 },
+                    { watts: 500, width: 225, height: 110 },
+                    { watts: 600, width: 245, height: 115 }
+                ];
+
+                var panelCounts = panelDimensions.map(function (panel) {
+                    var panelArea = (panel.width / 100) * (panel.height / 100); 
+                    var numberOfPanels = Math.floor((area / 2) / panelArea);
+                    var Energy = Math.floor(numberOfPanels * panel.watts / 1000 * 7 );
+                    return { watts: panel.watts, count: numberOfPanels, total: Energy};
+                });
+                
+
+                resultDiv.innerHTML = "<p><strong>Number of panels :</strong></p>";
+                panelCounts.forEach(function (panel) {
+                    resultDiv.innerHTML += "<p>" + panel.watts + " W: " + panel.count + " panels</p>" + panel.total + " Kw Energy";
+                });
+            } else {
+                resultDiv.innerHTML = "<p>Please draw an area on the map first.</p>";
+            }
+        }
+        
+
+        
     </script>
 
     <style>
         .leaflet-editing-icon {
-            background-color: #3498db; /* Blue */
+            background-color: red; 
             border-radius: 50%;
             width: 1px;
             height: 1px;
