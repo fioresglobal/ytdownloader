@@ -242,7 +242,7 @@
     }
     #area-display {
         position: absolute;
-        top: 57%;
+        top: 67%;
         left: 70px;
         background-color: #2980b9; /* Dark Blue */
         color: #ffffff; /* White */
@@ -253,7 +253,7 @@
     }
     #search-bar {
         position: absolute;
-        top: 520px;
+        top: 580px;
         left: 20px;
         color: #ffffff; /* White */
     }
@@ -422,7 +422,7 @@
 
                 resultDiv.innerHTML = "<p><strong>Number of panels :</strong></p>";
                 panelCounts.forEach(function (panel) {
-                    resultDiv.innerHTML += "<p>" + panel.watts + " W: " + panel.count + " panels</p>" + panel.total + " Kw Energy";
+                    resultDiv.innerHTML += "<p>" + panel.watts + " W: " + panel.count + " panels</p>" + panel.total + " Kw Energy per day";
                 });
             } else {
                 resultDiv.innerHTML = "<p>Please draw an area on the map first.</p>";
